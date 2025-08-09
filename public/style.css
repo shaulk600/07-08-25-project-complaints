@@ -1,0 +1,51 @@
+#page {
+    display: block;
+    width: 80vw;
+    height: 100vh;
+
+    margin-left: 10%;
+    padding-left: 10%;
+
+    margin-right: 10%;
+    padding-right: 10%;
+
+    background-color: rgb(223, 132, 21);
+
+    /* 
+    בעצם שמתי לו 80 אחוזים 
+    height: 100vh;  = ככה הגדרתי לו רוחב 80 אחוז
+    והגדרתי margin 10% 
+    כדי שהאלמט ישב באמצע !!
+    100-80 = (x=20) /2 = (x=10)
+    */
+}
+
+#box_head_page {
+
+    /* height: 20vh; */
+    background-color: blue;
+}
+
+#but_admin {
+    display: inline;
+    margin-left: 40px;
+}
+
+#box_text_title {
+    /* height: 100%;
+    width: 33%; */
+    display: inline;
+    margin-left: 10vw;
+}
+
+/* חייב את זה */
+#h_title {
+    display: inline;
+    margin-left: 10vw;
+}
+
+#img_logo {
+    /* height: 100%;
+    width: 33%; */
+    margin-left: 10vw;
+}

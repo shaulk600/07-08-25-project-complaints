@@ -1,0 +1,12 @@
+vs/
+bin/
+
+node_modules
+package.json
+package-look.json
+
+.env
+
+document/
+
+
