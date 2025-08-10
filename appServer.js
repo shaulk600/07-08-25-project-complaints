@@ -13,7 +13,12 @@ app.use(express.urlencoded({ extended: true }));
 configRoute(app);
 
 
-app.use(express.static('./public/complaint.html'));
+//לעשות איזשהו middleware
+//  שהוא לא פונה אל נתיב אחר - אל מערכת הקבצים הפנימית
+//  /או שיש לו הרשאות גישה
+
+app.use(express.static('./public/')); //אני פותח את התיקייה הזאת
+
 app.use((req, res) => {
     res.status(404).json({ msg: 'Route not found' })
 })

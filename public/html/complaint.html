@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>טופס</title>
-    <link rel="stylesheet" href="complaint.css">
+    <link rel="stylesheet" href="../css/complaint.css">
 </head>
 
 <body>
@@ -16,9 +16,9 @@
             <form action="/submit" method="post">
 
                 <div id="select-option" class="form-group">
-                    
+
                     <label for="select-option-complaint"> בחר תחום </label>
-                    
+
                     <select id="select-option-complaint" name="select-option-complaint" required>
                         <option value="foods"> אוכל </option>
                         <option value="equipments"> ציוד </option>
@@ -26,19 +26,19 @@
                         <option value="others"> אחר </option>
                     </select>
                 </div>
-                
+
                 <div id="complaint_content" class="form-group">
 
-                    <label for="complaint_content"> תוכן התלונה  </label>
-                    <textarea id="complaint_content" name="complaint_content" required>  
+                    <label for="complaint_content"> תוכן התלונה </label>
+                    <textarea id="complaint_content" name="complaint_content" required>
                     </textarea>
-                
+
                 </div>
-                
-                <div class="form-group">
-                    <label for="date">תאריך הלידה—הגדר תאריך של יום ההולדת:</label>
-                    <input type="date" id="date" name="date" >
-                </div>
+
+                <!-- <div class="form-group">
+                    <label for="date"> תאריך הגשה </label>
+                    <input type="date" id="date" name="date">
+                </div> -->
                 <div class="form-group">
                     <button type="submit" class="submit-btn">שלח טופס</button>
                 </div>

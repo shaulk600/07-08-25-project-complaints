@@ -1,20 +1,26 @@
-// import {  } from "../"; // עבור CTRL
-// import {  } from "./outerRoute.js"; // עבור route other
+import express from "express";
+import { initNewComplaint } from "../controllers/complaintControllers.js";
+import { getResponseLog } from "../controllers/loginControllers.js";
 
-import { getDataC, initDataC } from "../controllers/complaintControllers.js";
-import { router } from "./complaint.Route.js";
+import { checkData } from "../middleware/complaint.middle.js";
+import { checkDataLog } from "../middleware/entering.middle.js";
 
+import {  hashing } from "../utils/login.js";
 
 export default function configRoutes(app) {
 
-    app.get('/submit' , router);
-    //exemple
-    app.get('/data' , getDataC);
-    app.post('/data' , initDataC);
-    // dalll(app);
-    app.use('/', (req, res) => {
-        res.status(200).json({ msg: 'OK' })
-    });
+
+    app.post('/submit/', checkData, initNewComplaint);
+
+    app.post('/admin/', checkDataLog, getResponseLog);
+
+    
+    app.use('/jj/:id' , async (req , res ,next) => {
+       let a = req.queryparams['id'];
+       a = await hashing(a);
+        console.log(a);
+    })
+    
 
 
 }

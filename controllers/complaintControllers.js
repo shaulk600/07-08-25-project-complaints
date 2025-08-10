@@ -3,26 +3,26 @@
 import { getData, initData } from "../dal/complaints.dal.js";
 
 
-export async function getDataC(req, res) {
-    try {
-        const result = await getData(req.body);
-        if (result.success === 'ok') {
-            res.status(200).json(result.res);
-        }
-        if (result.success === 'field') {
-            res.status(500).json({ msg: 'error to init' });
-        }
-    } catch (err) {
-        console.log(`${err.message}`);
-        res.status(500).json({ msg: 'error to init in file CTRL' });
-    }
-}
+// export async function getDataC(req, res) {
+//     try {
+//         const result = await getData(req.body);
+//         if (result.success === 'ok') {
+//             res.status(200).json(result.res);
+//         }
+//         if (result.success === 'field') {
+//             res.status(500).json({ msg: 'error to init' });
+//         }
+//     } catch (err) {
+//         console.log(`${err.message}`);
+//         res.status(500).json({ msg: 'error to init in file CTRL' });
+//     }
+// }
 
-export async function initDataC(req, res) {
+export async function initNewComplaint(req, res) {
     try {
-        const result = await initData(req.body);
+        const result = await initData(req.body.data);
         if (result.success === 'ok') {
-            res.status(201).json(result);
+            res.status(201).json({ msg: ` this complaints is sending number of complaint is: ${result.res.insertedId}` });
         }
         if (result.success === 'field') {
             res.status(500).json({ msg: 'error to init' });
@@ -35,11 +35,11 @@ export async function initDataC(req, res) {
 //הדאטה הבא לצורכי testing
 // בעת ביצוע init - זה המלל שמגיע
 
-// result = 
+// result =
 // {
 //     "success": "ok",
 //     "res": {
 //         "acknowledged": true,
-//         "insertedId": "68949508c1b170c90f116295"
+//         "insertedId": "68949508c1b170c90f116295" - להדפיס שלט מספר תלונה הוא "ID"
 //     }
 // }
