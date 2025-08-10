@@ -20,7 +20,7 @@ import { getData, initData } from "../dal/complaints.dal.js";
 
 export async function initNewComplaint(req, res) {
     try {
-        const result = await initData(req.body);
+        const result = await initData(req.body.data);
         if (result.success === 'ok') {
             res.status(201).json({ msg: ` this complaints is sending number of complaint is: ${result.res.insertedId}` });
         }
