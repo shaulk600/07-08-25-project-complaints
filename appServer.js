@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 configRoute(app);
 
+
 //לעשות איזשהו middleware
 //  שהוא לא פונה אל נתיב אחר - אל מערכת הקבצים הפנימית
 //  /או שיש לו הרשאות גישה
